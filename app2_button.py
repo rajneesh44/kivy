@@ -7,6 +7,7 @@ from kivy.uix.label import Label
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
+from kivy.uix.widget import Widget 
 
 class MyGrid(GridLayout):
 	def __init__(self,**kwargs):
@@ -32,11 +33,14 @@ class MyGrid(GridLayout):
 		self.submit.bind(on_press= self.pressed)
 		self.add_widget(self.submit)
 
-		def pressed(self, instance):
-			name = self.name.text
-			last = self.lastname.text
-			email=self.email.text
-			print("Name:", name, "LastName:", lastname, "email:", email)
+	def pressed(self, instance):
+		name = self.name.text
+		last = self.lastname.text
+		email=self.email.text
+		print("Name:", name, "LastName:", last, "email:", email)
+		self.name.text=" "
+		self.last.text=" "
+		self.email.text=" "
 
 class MyApp(App):				#App is creating a constructor itself so we dont have to use init function.
 	def build(self):
