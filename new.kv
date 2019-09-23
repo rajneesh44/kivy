@@ -1,5 +1,8 @@
 <NewGrid>
+	name:  name
+	email: email
 	GridLayout:
+
 		cols:1
 		size: root.width -300 ,root.height-300
 		pos: 200,200
@@ -10,15 +13,18 @@
 				text:"Name"
 
 			TextInput:
+				id: name
 				multiline:False
 			
 			Label:
 				text:"Email"
 
 			TextInput:
+				id: email
 				multiline:False
 
 			Button:
 				text:"Submit"
+				on_press: root.btn()
 			
 
