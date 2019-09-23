@@ -7,15 +7,27 @@ from kivy.uix.label import Label
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
-from kivy.uix.widget import Widget 
+from kivy.uix.widget import Widget
+from kivy.properties import ObjectProperty
 
-class NewGrid(Widget):
-	pass
-	
+class NewGrid(Widget):     #root widget
+	name=ObjectProperty(None)
+	email=ObjectProperty(None)
+	def btn(self):
+			print("Name:",self.name.text,"email:",self.email.text)
+			self.name.text=""
+			self.email.text=""
+
+
 
 class NewApp(App):				#App is creating a constructor itself so we dont have to use init function.
 	def build(self):
 		return NewGrid()
+
+
+		
+
+
 
 
 if __name__ == "__main__":
